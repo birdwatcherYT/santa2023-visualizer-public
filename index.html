@@ -7,6 +7,10 @@
     <title>Santa2023 Cube Visualizer</title>
     <link rel="icon" href="https://birdwatcheryt.github.io/image/icon.ico">
     <link rel="stylesheet" type="text/css" href="https://birdwatcheryt.github.io/footer.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&family=Roboto+Mono&display=swap" rel="stylesheet">
     <style>
         button {
             padding: 10px;
@@ -14,6 +18,11 @@
 
         td {
             text-align: center;
+        }
+
+        table {
+            /* border-collapse:collapse; */
+            font-family: 'Roboto Mono', monospace;
         }
 
         .action {
@@ -102,7 +111,7 @@
 
             const current_state = simulate(initial_state, moves);
             document.getElementById("current_state").value = current_state.join(";");
-            document.getElementById("output").innerHTML = get_table(current_state);
+            document.getElementById("output").innerHTML = get_table(current_state, get_solution_state());
         }
         init();
     </script>
